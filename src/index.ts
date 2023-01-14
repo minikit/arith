@@ -74,7 +74,7 @@ function createOperation(operation: (n1: NumberType, n2: NumberType) => number):
  *
  * @param nums The numbers to multiply
  */
-const times = createOperation((num1, num2) => {
+const multip = createOperation((num1, num2) => {
   const num1Changed = float2Fixed(num1);
   const num2Changed = float2Fixed(num2);
   const baseNum = digitLength(num1) + digitLength(num2);
@@ -94,7 +94,7 @@ const plus = createOperation((num1, num2) => {
   // 取最大的小数位
   const baseNum = Math.pow(10, Math.max(digitLength(num1), digitLength(num2)));
   // 把小数都转为整数然后再计算
-  return (times(num1, baseNum) + times(num2, baseNum)) / baseNum;
+  return (multip(num1, baseNum) + multip(num2, baseNum)) / baseNum;
 });
 
 /**
@@ -104,7 +104,7 @@ const plus = createOperation((num1, num2) => {
  */
 const minus = createOperation((num1, num2) => {
   const baseNum = Math.pow(10, Math.max(digitLength(num1), digitLength(num2)));
-  return (times(num1, baseNum) - times(num2, baseNum)) / baseNum;
+  return (multip(num1, baseNum) - multip(num2, baseNum)) / baseNum;
 });
 
 /**
@@ -120,7 +120,7 @@ const divide = createOperation((num1, num2) => {
   checkBoundary(num2Changed);
 
   // fix: 类似 10 ** -4 为 0.00009999999999999999，strip 修正
-  return times(num1Changed / num2Changed, strip(Math.pow(10, digitLength(num2) - digitLength(num1))));
+  return multip(num1Changed / num2Changed, strip(Math.pow(10, digitLength(num2) - digitLength(num1))));
 });
 
 /**
@@ -131,10 +131,10 @@ const divide = createOperation((num1, num2) => {
  */
 function round(num: NumberType, decimal: number): number {
   const base = Math.pow(10, decimal);
-  let result = divide(Math.round(Math.abs(times(num, base))), base);
+  let result = divide(Math.round(Math.abs(multip(num, base))), base);
 
   if (num < 0 && result !== 0) {
-    result = times(result, -1);
+    result = multip(result, -1);
   }
 
   return result;
@@ -151,13 +151,13 @@ function enableBoundaryChecking(flag = true) {
   _boundaryCheckingState = flag;
 }
 
-export { strip, plus, minus, times, divide, round, digitLength, float2Fixed, enableBoundaryChecking };
+export { strip, plus, minus, multip, divide, round, digitLength, float2Fixed, enableBoundaryChecking };
 
 const arith = {
   strip,
   plus,
   minus,
-  times,
+  multip,
   divide,
   round,
   digitLength,

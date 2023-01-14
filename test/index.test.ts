@@ -126,56 +126,56 @@ test('arith.minus can do minus operation', (t) => {
   t.true(arith.minus(500, ...new Array(500).fill(1)) === 0);
 });
 
-test('arith.times can do times operation', (t) => {
-  t.true(arith.times(0.07, 100) === 7);
-  t.true(arith.times(0.7, 0.1) === 0.07);
-  t.true(arith.times(3, 0.3) === 0.9);
-  t.true(arith.times(118762317358.75, 1e-8) === 1187.6231735875);
-  t.true(arith.times(0.362, 100) === 36.2);
-  t.true(arith.times(1.1, 1.1) === 1.21);
-  t.true(arith.times(2.018, 1000) === 2018);
-  t.true(arith.times(5.2, -3.8461538461538462) === -20);
-  t.true(arith.times(1.22, -1.639344262295082) === -2);
-  t.true(arith.times(2.5, -0.92) === -2.3);
-  t.true(arith.times(-2.2, 0.6363636363636364) === -1.4);
-  t.true(arith.times('0.07', '100') === 7);
-  t.true(arith.times('0.7', '0.1') === 0.07);
-  t.true(arith.times('3', '0.3') === 0.9);
-  t.true(arith.times('118762317358.75', '1e-8') === 1187.6231735875);
-  t.true(arith.times('0.362', '100') === 36.2);
-  t.true(arith.times('1.1', '1.1') === 1.21);
-  t.true(arith.times('2.018', '1000') === 2018);
-  t.true(arith.times('5.2', '-3.8461538461538462') === -20);
-  t.true(arith.times('1.22', '-1.639344262295082') === -2);
-  t.true(arith.times('2.5', '-0.92') === -2.3);
-  t.true(arith.times('-2.2', '0.6363636363636364') === -1.4);
-  // t.true(arith.times(-3, 2.3333333333333335) === 7);
-  // t.true(arith.times(-0.076, -92.10526315789471) === 7);
-  t.true(arith.times(8.0, -0.3625) === -2.9);
-  t.true(arith.times(6.6, 0.30303030303030304) === 2);
-  t.true(arith.times(10.0, -0.8) === -8);
-  t.true(arith.times(-1.1, -7.272727272727273) === 8);
-  t.true(arith.times('8.0', '-0.3625') === -2.9);
-  t.true(arith.times('6.6', '0.30303030303030304') === 2);
-  t.true(arith.times('10.0', '-0.8') === -8);
-  t.true(arith.times('-1.1', '-7.272727272727273') === 8);
+test('arith.multip can do multip operation', (t) => {
+  t.true(arith.multip(0.07, 100) === 7);
+  t.true(arith.multip(0.7, 0.1) === 0.07);
+  t.true(arith.multip(3, 0.3) === 0.9);
+  t.true(arith.multip(118762317358.75, 1e-8) === 1187.6231735875);
+  t.true(arith.multip(0.362, 100) === 36.2);
+  t.true(arith.multip(1.1, 1.1) === 1.21);
+  t.true(arith.multip(2.018, 1000) === 2018);
+  t.true(arith.multip(5.2, -3.8461538461538462) === -20);
+  t.true(arith.multip(1.22, -1.639344262295082) === -2);
+  t.true(arith.multip(2.5, -0.92) === -2.3);
+  t.true(arith.multip(-2.2, 0.6363636363636364) === -1.4);
+  t.true(arith.multip('0.07', '100') === 7);
+  t.true(arith.multip('0.7', '0.1') === 0.07);
+  t.true(arith.multip('3', '0.3') === 0.9);
+  t.true(arith.multip('118762317358.75', '1e-8') === 1187.6231735875);
+  t.true(arith.multip('0.362', '100') === 36.2);
+  t.true(arith.multip('1.1', '1.1') === 1.21);
+  t.true(arith.multip('2.018', '1000') === 2018);
+  t.true(arith.multip('5.2', '-3.8461538461538462') === -20);
+  t.true(arith.multip('1.22', '-1.639344262295082') === -2);
+  t.true(arith.multip('2.5', '-0.92') === -2.3);
+  t.true(arith.multip('-2.2', '0.6363636363636364') === -1.4);
+  // t.true(arith.multip(-3, 2.3333333333333335) === 7);
+  // t.true(arith.multip(-0.076, -92.10526315789471) === 7);
+  t.true(arith.multip(8.0, -0.3625) === -2.9);
+  t.true(arith.multip(6.6, 0.30303030303030304) === 2);
+  t.true(arith.multip(10.0, -0.8) === -8);
+  t.true(arith.multip(-1.1, -7.272727272727273) === 8);
+  t.true(arith.multip('8.0', '-0.3625') === -2.9);
+  t.true(arith.multip('6.6', '0.30303030303030304') === 2);
+  t.true(arith.multip('10.0', '-0.8') === -8);
+  t.true(arith.multip('-1.1', '-7.272727272727273') === 8);
 
-  t.true(arith.times(-1.23e4, 20) === -246000);
-  t.true(arith.times(1.7e-30, 1.5e20) === 2.55e-10);
-  t.true(arith.times('-1.23e4', '20') === -246000);
-  t.true(arith.times('1.7e-30', '1.5e20') === 2.55e-10);
+  t.true(arith.multip(-1.23e4, 20) === -246000);
+  t.true(arith.multip(1.7e-30, 1.5e20) === 2.55e-10);
+  t.true(arith.multip('-1.23e4', '20') === -246000);
+  t.true(arith.multip('1.7e-30', '1.5e20') === 2.55e-10);
 
-  t.true(arith.times(2, 2, 3) === 12);
-  t.true(arith.times(2, 2, 3, 0.1) === 1.2);
-  t.true(arith.times('2', '2', '3') === 12);
-  t.true(arith.times('2', '2', '3', '0.1') === 1.2);
+  t.true(arith.multip(2, 2, 3) === 12);
+  t.true(arith.multip(2, 2, 3, 0.1) === 1.2);
+  t.true(arith.multip('2', '2', '3') === 12);
+  t.true(arith.multip('2', '2', '3', '0.1') === 1.2);
 
-  t.true(arith.times(0.000000123456, 0.000000123456) === 1.5241383936e-14);
-  t.true(arith.times(1.23456e-7, 1.23456e-7) === 1.5241383936e-14);
-  t.true(arith.times('0.000000123456', '0.000000123456') === 1.5241383936e-14);
-  t.true(arith.times('1.23456e-7', '1.23456e-7') === 1.5241383936e-14);
+  t.true(arith.multip(0.000000123456, 0.000000123456) === 1.5241383936e-14);
+  t.true(arith.multip(1.23456e-7, 1.23456e-7) === 1.5241383936e-14);
+  t.true(arith.multip('0.000000123456', '0.000000123456') === 1.5241383936e-14);
+  t.true(arith.multip('1.23456e-7', '1.23456e-7') === 1.5241383936e-14);
 
-  t.true(arith.times(...new Array(500).fill(1)) === 1);
+  t.true(arith.multip(...new Array(500).fill(1)) === 1);
 });
 
 test('arith.divide can do divide operation', (t) => {
