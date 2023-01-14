@@ -153,7 +153,7 @@ function enableBoundaryChecking(flag = true) {
 
 export { strip, plus, minus, times, divide, round, digitLength, float2Fixed, enableBoundaryChecking };
 
-export default {
+const arith = {
   strip,
   plus,
   minus,
@@ -163,4 +163,6 @@ export default {
   digitLength,
   float2Fixed,
   enableBoundaryChecking,
-};
+}
+
+export default arith;

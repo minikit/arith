@@ -1,24 +1,24 @@
 {
   "name": "@minikit/arith",
-  "version": "1.6.0",
+  "version": "0.1.0",
   "description": "Perform addition, subtraction, multiplication and division operations precisely using javascript",
+  "homepage": "https://github.com/minikit/arith",
+  "repository": "git@github.com:minikit/arith",
+  "bugs": "https://github.com/minikit/arith/issues",
+  "license": "MIT",
+  "author": "Billgo <hi@billgo.me>",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
-  "author": "billgo",
   "keywords": [
     "number precision",
     "floating problem",
     "rounding error"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/minikit/arith.git"
-  },
-  "bugs": {
-    "url": "https://github.com/minikit/arith/issues"
-  },
-  "homepage": "https://github.com/minikit/arith",
+  "files": [
+    "dist",
+    "bin"
+  ],
   "scripts": {
     "build": "rollup -c",
     "watch": "rollup -cw",
@@ -27,14 +27,6 @@
     "prepublish": "rm -rf build && tsc && npm run build",
     "tslint": "tslint ./src/**/*.ts --fix"
   },
-  "ava": {
-    "files": [
-      "build-test/**/*.test.js"
-    ]
-  },
-  "pre-commit": [
-    "tslint"
-  ],
   "devDependencies": {
     "ava": "^3.8.2",
     "braces": ">=2.3.1",
@@ -48,5 +40,19 @@
     "tslint": "^5.8.0",
     "typescript": "^3.8.3"
   },
-  "license": "MIT"
+  "ava": {
+    "files": [
+      "build-test/**/*.test.js"
+    ]
+  },
+  "pre-commit": [
+    "tslint"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "engines": {
+    "node": ">= 14"
+  }
 }

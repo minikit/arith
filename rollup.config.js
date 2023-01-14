@@ -5,12 +5,12 @@ export default {
   output: [
     {
       format: 'iife',
-      name: 'NP',
+      name: 'arith',
       dest: './dist/index.iife.js'
     },
     {
       format: 'umd',
-      name: 'NP',
+      name: 'arith',
       dest: './dist/index.umd.js'
     },
     {
