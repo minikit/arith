@@ -75,6 +75,7 @@ public/
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
 .travis/databases
+build-test
 
 # Testing
 cypress/videos
